@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<overlay id="rebuildAppmenu"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<!--
+// ==UserScript==
+// @name           rebuildAppmenu
+// @namespace     rebuildAppmenu.uc.xul@gmail.com
+// @description    自用Appmenu
+// @compatibility  Firefox 20+
+// @version        增加了几个功能，修改了几个图标，MOD on 1.0.4     2013.03.28  取消了Web开发图标
+// @Author               defpt
+// ==/UserScript==
+-->
+    <vbox id="appmenuPrimaryPane">
+        <menuitem id="appmenu-restart" 
+        label="重启浏览器" 
+        class="menuitem-iconic"
+        image="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKlSURBVDhPdZNLTBNhFIVngTuVmAgbF67cqLsmmPhqYkTRGImhhQCKtBKr8rJgabXSDoW2zLRT2tLH0DLAQLEQglJJfCQYYqIEiQutcUECCAt3rgppeCi/c8osLMGbnOTmnvPNvTNNqb1KcVGdW3ijSnW98m4ThB4z2f5/nS1S5ZVqGsMPjPaNViZEaA+f6vAJf1rZMMGsTPuQR0aOZ9flkqoTumZ6xRkQCReJk65I/Ovs5y8XHD5hiQ3FNrt6Rwk8ZJCVsZ1SXis/fN9gW3H3PCNeYZQwwb6Z7e3tfHjpdPro8vLPMwMjCYEJDa4jg2zWJbdrTSIbGiJeaQs24WS1psGvUCj2FVfci11RVVdMT0/nTLx5p5GuWEcWTAbGdqPdu+WJxsm/orkeUqN/+qGVDf5+7PCTUm3DuFJpzfFGY11uPkbAgKW09aZbDn8f4aTTdgub3Pxwpre6eKKurtdOTc0cobnoJhiwlO4RbZbejXR2iylPREw6A0LaJW3YLTY8ROpM7c9xtZnp/gEGLFXbYjMzQZE8cfgXUqlUHu0KTrGSuZeMNu4VHmC0cgtgwFLNls47dp9AWmyejYKiyoMWxt9s9/VJv4SYJczgKZXq/ciCAUsND08eM3cGttqkj1Zeozckk8lDTl90tsPbS5zd/RllemkGr7ym0UC7eQIGLC6iOjx8AqE6ky1dWHLz1Orqar44OsF4ePETNDDygsXskqqqABlk27nwywyMGp98e9LCBH7ZpCt0Tda1q2qN/rh0KiEkF0KPmU5vWUMGWTAyvlNjidfFMNo4nhja3KS61rRepqn/BqHHDB4yyMpYdn2cmzvtDgrvzU7/ltUVIlZWltRjBg8ZOb53Sf+BA/OLi+f64+PtkcGxQQj99/ml8/DkmFwU9RcBXOUTTWNTuwAAAABJRU5ErkJggg==" 
+        insertbefore="appmenu_newTab"
+        oncommand="Services.appinfo.invalidateCachesOnRestart() || Application.restart();" />
+        <menuitem id="appmenu_newPrivateWindow" 
+        label="新建隐私窗口"
+        image="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAQCAYAAADJViUEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADlSURBVDhP1ZE9CsJAEEb3Ah7AC3gEr+DFLIyJhYVRQS1iUGubIATcTVbCshapFBS08wBeYPRbVhF/QLEQPxiymXlvCRP2VTw/PNrjRzFeszcmKeXB9t4KeHis0R2R64dG1lqXeZpRrRWQ1wmvhXf0MQcHHh67hT6tH8t1P6D+ZEqXrDY7qjYHBsBzvd3bCRkOvJG5EOS2n9/8qsDDw9oLPEnPtw2fgvcFDjw8bJ5pIYqJXJBjP+dVYQ4OvBEvyXNVEjIj5+4fX8VzH3NwVnnMUqlKFHOaCWUWFM0zimJB6Fvkv8PYCZ7tkRugt4mtAAAAAElFTkSuQmCC"  />
+        <menuitem id="appmenu-sanitizeHistory" 
+        label="清理浏览痕迹" 
+        insertbefore="appmenu_offlineModeRecovery"
+        class="menuitem-iconic" 
+        image="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB2SURBVDhP1ZDRDYAgDES7fgdwAaeAiTqGWtJikRNjDB9ecumVvJYATRUv66a29r1+uMAHnmx4LwQjGz5B6DZkw1vlnCGMnFLqlzAzhKEP1sZO+YKSDUQ51ioRqdu1H2WvOqO5KL5f+1H22vyDQxG4y9ezjyLaAWyfFc3OVpTLAAAAAElFTkSuQmCC" 
+        oncommand="Cc['@mozilla.org/browser/browserglue;1'].getService(Ci.nsIBrowserGlue).sanitize(window);" />
+        <menuitem id="appmenu-config" 
+        label="about:config" 
+        insertbefore="appmenu_print"
+        class="menuitem-iconic" 
+        image="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVDhPjZK/S8NAFMcjiOIigl0ErYM4OTooDm4uTk4urv4JglvdrElr2pomubY2ufyy9kdaiCUiinXWRaQ4iIM4iQhuilUb79KrbTXQfuDBvXvv+73H46h2RMmYZkVtlU0aa5H0wVw2mx0ipd7gpMzGThx+o3BoXnpjgZ42LMtHyt2RS6WRXaCWsUEzGAE+AM0cIy3dcRynL5YyAkFOrjdNWKAdkfJ/KpVKPzl2EOLV+9Ykcl0zj72niCQ00bbtQZK6KDnLj0RfLQPoRIC+SMqdoGINvXalF8qTOMdmYVE9aRfjEOTDeVfwF4ZXnnEDWtZLWFC3GEG5+SvGAWBunUg6iSZ14CXwCrTMiyTMzxBpg4SS8zM8vPYSeAUdlz8jST2q2fYwsaAow7B8yL2At91qhB9sQj9rF7v3vOJ+NPTokwBzs8SigWaa49GUscxJ2SX8qfBdbF/f/DUQlMdi8XQ0oRZWcI4+3aUr7AZqdE1CgnJXrVYHpEx+AefBOHwlLd0R5Pw2FtFodHpPecfnMFDPSbk3uHQmgHZTc8WidgtgcYqUegdvn5cyE42Mon4AKKVSBCWmd9wAAAAASUVORK5CYII=" 
+        oncommand="gBrowser.selectedTab = gBrowser.addTab('about:config');" />
+        <menuitem id="appmenu-plugins" 
+        label="about:plugins" 
+        insertbefore="appmenu_print"
+        class="menuitem-iconic" 
+        image="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJ0SURBVDhPjVFLbBJRFB23ummauHBhYjTRtRKNmpoajS2aRtpC1NCWWoKgdLDUUhlKy8Aw/JlCKZ+ZQikw1Eqpn5LoxpV7E+PCuNGVMSZuaGLS4obre5NpICSanuRkXs5958657xKduNin6R64Z5i8dUdv7u1VdcnywTHxeO49E8sB5n3S8VKWDw53NPNxKV+F+OomMFF+S5YPjlR+425UWIdQWoRcsXJJlv8NpXrsrHrMLAyPkxGNjmQfzno+Rfl1iPBlMM24v2jGSQ7VgmodKSjV+j7Z1oJphjZ74znwL69JxMbF7IZEfA7IOhPLwhOXf0S2tWC2e+cjmTJwwrP/0reUBzsduSbbWrDM+R3hjCj9LZQuwf65k75EHiYslPXGoO4mGuuNatRUUAwMHCYyWfGqh+N/LvKlD5uv31IJQawFkwUI42ZtDKWKQLFxmPVwwKKRF0Ip0BqsRgIADjWbzVM7OzvdOJEnkjrvjgqSoZPSeyTWIJgsSl+zzUMRV/qHjg2Omt6ptCbxcv/tM9oH0w4PJ0iX2+lbWoWYUCqUK9usl0t/Zzj+W2HzlYIYNdlsLhQHRyIpFmZcYfBy/A86kvmFo/rR7JiucBroYLwHJ0Y8sbu7e1x6RLRGF4tW5EOXMV3B5Oe9vb2TjUbjNB1Kfd3Xnf4EkE/pC5KpHY9stI1BkXETTKvT/7tHqTnaPzRybno+9Gdfnw8sg9FCKWVbCxY7o6dRPO/iCuBGlDcGxinHsNHqmHQGEpKGawvBJBim5nSyrYV0tqDIFCq1nFitrZSqpXK1ZkNbOVKv17vK1W17trRVyYkvUK3yPJrMXZdtMgjiL/o0qQAqtCMRAAAAAElFTkSuQmCC" 
+        oncommand="gBrowser.selectedTab = gBrowser.addTab('about:plugins');" />
+        <menuitem id="appmenu-about" 
+        label="about:about" 
+        insertbefore="appmenu_print"
+        class="menuitem-iconic" 
+        image="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADhElEQVQ4jW2TX0xbBRjFv95CWzYYpfdSCkYmKdZMYRFrrDgcK4SyQca/0YF0UIewKaholw3sYlw1cKUP0k2NY8A2UNIEFjpogBlQ0CUyIUgCCK7ZQoBRCrWWERSdcccH3YwJ5/n8Ts55OERE5DKyV2aNnJqIKKH0/LNZumONx/OKZtXljT51eaNv98ufjD9lsHXtKmwopq3kMnJwGTnkJZfUpuWcuu0ycuhUi3FxbgMX5zZQN+bGgfpBPP5KKwq1uV/2ZQXseQjXiuiIy8jBa5HhQZDXIkN7fADqp9dgnfLjvbFV5LdNIq74HKYup6G7QL75TansMBER2bjA5ltvRsBrkcFvU8L9gQJeiwwtKgYtKgYaIYOTo17oHS7EHf0ME8NlmO/Sot/ArQ1VhCuoKSZwYt6s+MtvU8JrjcHiO1HwmP9r85qMQclXy8jpmYOq7BL4j0/g15lC3KiOxnCZ9CzZnxGvePgI+G1KeC0sFt6OxIJpF36xV6NFxSDn2s/IdtzBi+dnEPvqFyiuegPukXwsdiRgoEA8SV17AzY99Rz8NiWWzByWmjVYatZg/cpBtMUz2NPkwgsNo9h98ipijtnxpK4K/u9zcXcgEb1ZAffIqaP7Hp7D+kcy9CZJ0LpT+HB/WIoFUYZmRBsvYWfBOUTmfwrt4XJgNhn+4afRk073qTed1mdfD4WPZzFfE4a+OAE61AxCk8xgM6zoyFaivSIVikwe4ZlWnDGlA9/FY6U1En0HBRt0LZkcQ/uD4ONZ+HgWoxlijGdK8INeipvFwRgzhKNFxSA8vQ5RiZVYbovG710KzJhE6DtAI+TcS0UOjeC36aMh8PEsPO9yuFnK4nqGBI7nAv+BE804pU3A9boncK89Aqv1YvRnS9CXI3+fGtW0rTuJJga1EtypkWL1DIvFajluVT0C+/PBsOdEojt3ByaOB8HPS+HmOYyXidH/kvTuUMVjCiIismtJ83kirQymiOGqDMWyOQzLNWFYMLNwnw7D/IlQ3K7cgYW3QvCTaTsGCpjNhhTh/39xREklZxNo1ZksxLdpYkwd2oZp/XZMFQXjx5IQTBok+DpPjM79ok19LJm2+lR6DEPW04+SpylB8MfVfQL06AhOHaEnjUFnqvDPD1UBa7FC5gIRZWwVICeieCLKi2WoNlUkcB4KEo7kBwlv7BMJemIYshKR/l+P/AH0N9bC4YxybGQ2AAAAAElFTkSuQmCC" 
+        oncommand="gBrowser.selectedTab = gBrowser.addTab('about:about');" />
+    </vbox>
+    <script type="application/x-javascript">
+<![CDATA[
+function edituserChromecss() {
+    var file = Components.classes['@mozilla.org/file/directory_service;1'].getService(Components.interfaces.nsIProperties).get("UChrm", Components.interfaces.nsILocalFile);
+    file.append("userChrome.css");file.launch();
+}
+]]>
+    </script>
+</overlay>

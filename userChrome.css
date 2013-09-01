@@ -1,0 +1,221 @@
+﻿@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+@-moz-document url(chrome://browser/content/browser.xul) {
+
+/*
+____________________________________________________________________________
+|                  |                                                        |
+|          Title:  |  Firefox SimpleU Edition CSS File Based                |
+|         Author:  |  -=LeoKwok=-                                           |
+|Css Chkout: http://simpleu.googlecode.com/svn/trunk/Firefox/userChrome.css |
+|   Last Updated:  |  22:46 2013/8/14                                       |
+|        Version:  |  1.8.0.7                                               |
+|__________________|________________________________________________________|
+
+*/
+
+/*AdBlockPlus Menu Hide*/
+#abp-frame-menuitem,
+#abp-image-menuitem,
+#abp-media-menuitem,
+#abp-menuitem,
+#abp-object-menuitem,
+#abp-removeWhitelist-menuitem,
+#tooldonate,
+.abp-contextmenuitem{
+display: none !important;
+	}
+
+/*破解右键复制限制*/
+body{
+-moz-user-select:element !important;
+}
+
+/*图片圆角*/
+img{border-radius: 4px !important;}
+
+/*附加组件栏调整*/	
+#addonbar-closebutton,#addon-bar dropmarker {
+display:none!important;
+}
+#status-bar > * {height:24px!important;}
+#navigator-toolbox:not([customizing]) ~ #browser-bottombox {
+position:fixed;
+bottom:0;
+right:0;
+}
+#main-window[sizemode="maximized"] #addon-bar > * {
+left:16px!important;
+}
+#main-window[sizemode="fullscreen"] #addon-bar > * {
+left:16px!important;
+}
+
+/*窗口化时标签置顶*/
+#main-window[sizemode="normal"][tabsontop=true] #TabsToolbar {
+  padding:0px 97px 0px 0px !important;  
+  margin-top: -23px !important; }
+
+/*地址栏图标位置调整*/
+#star-button{-moz-box-ordinal-group:0 !important;}
+#refererChangerTogglePanel,#uac_statusbar_panel{-moz-box-ordinal-group: 1 !important;}
+#ucjsPermission_Toolmenu,#urlfilter-icon{-moz-box-ordinal-group: 2 !important;}
+#UserScriptLoader-icon{-moz-box-ordinal-group: 3 !important;}
+#WebScreenShot dropmarker{display: none !important;}
+
+/*标签页计数*/
+#main-window { counter-reset: tabs;}
+.tabbrowser-tab:not(:-moz-any([pinned],[concealed])){
+    counter-increment: tabs;
+}
+#alltabs-button {visibility: visible!important;}
+#alltabs-button:after { 
+    content: counter(tabs);
+    display: -moz-box;}
+#alltabs-button > :-moz-any(label, image) { 
+    display: none;}
+}
+
+/*标签样式css*/
+.tabbrowser-tab[selected] {color: blue !important;}/* 当前标签 */
+.tabbrowser-tab[fadein]:not([selected]):not([unread]):not([busy]):not([pending]){text-decoration:line-through !important;}/* 已读标签 */
+.tabbrowser-tab[busy] {color: #009DFF !important;}/* 正在加载标签 */
+.tabbrowser-tab[pending] {color: gray !important;}/* 未加载标签 */
+.tabbrowser-tab[unread] {color: red !important;}/* 未读标签 */
+
+/*扩展管理器显示地址栏*/
+#main-window[disablechrome] #navigator-toolbox[tabsontop="true"] #nav-bar:not([collapsed="true"]) {
+visibility: visible!important;}
+
+/*隐藏左下角网页载入信息*/
+#statusbar-display[type*="status"] {display:none !important;}
+
+/*隐藏书签图标后面的 “书签” 按钮文字*/
+#bookmarks-menu-button .toolbarbutton-text { display:none !important; } 
+
+/*Firefox左上角换文字,调宽度,去小三角*/
+#appmenu-button .button-box .box-inherit .button-text {
+display: none;
+}
+#appmenu-button .button-box .box-inherit:before {
+content: "SimpleU";
+}
+#appmenu-button dropmarker {display: none !important;}
+
+/*调整标签宽度*/
+.tabbrowser-tab:not([pinned])[fadein]
+{ max-width: 160px !important;  min-width: 120px !important; }
+
+/*使书签工具栏图标变得紧凑*/
+#personal-bookmarks
+{padding: 0px 0px 0px 0px !important;}
+
+/*去掉标题栏顶部1px*/
+#tabbrowser-tabs
+{margin-top:-1px!important;}
+
+/*Https协议地址栏变色*/
+#urlbar[level="low"]{
+  background-color: #FFFFB7 !important;
+}
+#urlbar[level="high"]{
+  background-color: #DDF9CC !important;
+}
+#urlbar[level="broken"]{
+  background-color: #F7DFDF !important;
+}
+
+/*右侧工具间距调整*/
+#TabsToolbar .toolbarbutton-1{ 
+     margin: 0 5px !important;
+ }
+
+/*去地址栏边框color: #1507D5 !important;*/
+#navigator-toolbox[iconsize="small"] #urlbar {
+background: none !important;
+border: none !important;
+margin: 0 !important;
+box-shadow: none !important;
+}
+
+/*粘贴并转到置顶：地址栏右键*/
+.textbox-contextmenu menuitem:not([anonid="paste-and-go"]),
+.textbox-contextmenu menuseparator {
+-moz-box-ordinal-group:3 !important;
+}
+menuitem[anonid="paste-and-go"] {
+-moz-box-ordinal-group:1 !important;
+}
+.urlbar-textbox-container menuitem[cmd="cmd_paste"] {
+-moz-box-ordinal-group: 2 !important }
+
+/*粘贴并转到置顶：搜索栏右键*/
+#searchbar menuitem:not([anonid="paste-and-search"]),
+#searchbar menuseparator {
+-moz-box-ordinal-group:3 !important;
+}
+#searchbar menuitem[anonid="paste-and-search"] {
+-moz-box-ordinal-group:1 !important;
+}
+#searchbar menuitem[cmd="cmd_paste"] {
+-moz-box-ordinal-group:2 !important;
+}
+
+/*Show Broken Images*/
+@-moz-document url-prefix(http), url-prefix(https), url-prefix(file) {
+	img{
+		font: 12px Arial!important;
+	}
+	img:-moz-broken{
+		-moz-force-broken-image-icon: 1 !important;
+		width: 48px;
+		height: 24px;
+	}
+}
+
+/*输入框类chrome高亮*/
+input:not([type='submit']):not([type='reset']):not([type='button']):not([type='checkbox']):not([type='radio']):focus, textarea:focus, select:focus{ border:1px solid #0099FF;  box-shadow: 1px 1px 0 #0099FF, 1px -1px 0 #0099FF, -1px 1px 0 #0099FF, -1px -1px 0 #0099FF, 0px 0px 5px 1px #0099FF !important;  border-radius:5px!important; }
+
+/*当前标签打开该链接显示红色,新标签打开为蓝色*/
+a:hover{
+color: red !important;/*链接颜色自定义*/
+text-shadow:-5px 3px 18px #F90 !important;/*链接阴影*/
+-moz-transition: all 0.2s ease-out;/*链接变色动画显示时长及类型，具体参考相关资料*/
+}
+A[target="_blank"]>img:hover{box-shadow: 0 0 1px 1px blue !important;}
+A[target="_blank"]:hover{color:blue !important;}
+
+/*调整选中文本及其背景的颜色*/
+*::-moz-selection {background-color:#FFC299;color:#02020F;text-shadow:none!important}  
+
+/*BBS.Code.Fix*/
+.blockcode ol li{list-style-type:none!important;}
+.blockcode > div[id^="code"] + em {display:none!important;}
+
+/* 去除伪链接的下划线 */
+a:not([href]){text-decoration: none !important;}
+
+/* 去除非链接文字下划线，并给这些文字加粗 */
+u,span[style="text-decoration: underline"]{text-decoration: none !important;font-weight: bold !important;}
+
+/* 将白色字体变为暗蓝灰 */
+[style*="color: white"],[style*="color: #FFFFFF"],[color*="White"],[color*="#FFFFFF"]{color: #483D8B !important;}
+
+/* 阻止<blink>标签带来的闪烁 */
+blink, .blink, *[style*="blink"]{text-decoration : inherit !important;}
+
+/*---隐藏页面右键菜单---*/ 
+#context-forward, /*前进*/
+#context-bookmarkpage,
+#context-savepage,
+#context-viewsource,
+#context-viewinfo,
+#context-viewbgimage,
+#context-back, /*后退*/
+#context-delete, /*停止*/
+#context-openlink, /*在新窗口打开链接*/
+#context-selectall,/*全选*/
+#spell-check-enabled, /*拼写检查*/
+#spell-separator, /*拼写检查分割线*/
+#context-sep-viewbgimage,    /*分割线*/
+#context-sep-viewsource /*分割线*/
+{display: none !important;}
