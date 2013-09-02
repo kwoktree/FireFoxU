@@ -7,7 +7,7 @@ ____________________________________________________________________________
 |          Title:  |  Firefox SimpleU Edition CSS File Based                |
 |         Author:  |  -=LeoKwok=-                                           |
 |Css Chkout: http://simpleu.googlecode.com/svn/trunk/Firefox/userChrome.css |
-|   Last Updated:  |  1:03 2013/9/2                                         |
+|   Last Updated:  |  9:45 2013/9/2                                         |
 |        Version:  |  1.8.0.8                                               |
 |__________________|________________________________________________________|
 
@@ -219,11 +219,3 @@ blink, .blink, *[style*="blink"]{text-decoration : inherit !important;}
 #context-sep-viewbgimage,    /*分割线*/
 #context-sep-viewsource /*分割线*/
 {display: none !important;}
-
-@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
-
-@-moz-document url("about:addons"), url("chrome://mozapps/content/extensions/extensions.xul") {
-    #category-userchromejs > .category-icon {
-        list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACk0lEQVQ4ja3RW0hTARwG8A+nEIIxI9DwyQtCarKj7vhkWEwj8AKahNR6siAispce6k2y9VJvIblpkBOt4xGU5ko0RKZuecMLedlxTk0ym7Y5TcvL10OmKwuC+uB7/fG/AP8jarWaERERNBgMDxsbG4uMRuMdQRB4WH2MGdog0gvuuL+XbnDLDW66wQNAeXl5mSzLeUajsVQQhHW1+gjFtPgNn6d2Yl6pdM4rlc53U8/G/a4T/q2/A9RMS0tfXfR86ZpwLjgmnAuOMYU27/TZpe0/AQ0NDbkmk+nGPpC25vF47Iqi9CmK0jfh9PV4p7OWDwCRkZEsKysz1NfXF1VUVNzaA7TatSXvcs+Uy9WruFy9k9P+bt9M9vLO3C9AXFwcBUGgKIrMyMhgYmIij4aFMT05+fPk0NDAQGfn8LDNNjzUNdb/seekd90eAKiCwxkVFc2EhOPUaDTUiiLjYmKYAvAMwHyAJQDvAqwE2IwgOqDaB87nH2JRgbhaUFj8tbi4ePWiXv8pLyfHJwDMBli4C5QDNAG0AOxHwATcACcHr483NXeNWSyWPovV2tnUKPekAMwCeCk01HNPp7M8ysxsq9Hp2pp1urYOne71PjAPvum44jLXWTslSbJLsuyoNdf0pQA8BbBUo3FY7fZkyWrNrNutuaUl+zfAyy5Jeu4IBE4DvJaUNNTQ3p77RJb1JlnWV8qy/rEslfwEdLffdFY9dXSY617ZzPWtturqpr0VLoSE+G+npg4+EIRRo1Y7Kmm1o62i+HYP2JoBl8fD19+PxPs+jMSuLI7Grrjt0f6U3SOeA3gZoAFgFcAWgAOBR9x0g9szIGfBnVmQc+DqGPgDKAJ4FeB9gFXBwXyhUrFXFfDGf8k3RzmjBlDWo+YAAAAASUVORK5CYII=);
-    }
-}
