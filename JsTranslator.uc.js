@@ -1,15 +1,16 @@
 // ==UserScript==
 // @name                 JsTranslator.uc.js
 // @namespace            JsTranslator@gmail.com
-// @description          翻译大集合，可自行开启其它
+// @description          翻译合集，注释了一些我不常用的，可通过注释自行选择，
+//                       默认图标设在了地址栏，取消13、14、23行注释符号//，
+//                       注释掉25行可变为可移动按钮
 // @charset              UTF-8
 // @author               defpt
 // @version             1.0.0  2013.02.25 
 // ==/UserScript==
 (function ToolsBtn() {
     function createBtn() {
-	    //适当的注释和取消注释可改为可拖动版按钮
-	    //var navigator = document.getElementById("navigator-toolbox");
+      //var navigator = document.getElementById("navigator-toolbox");
 		//if (!navigator || navigator.palette.id !== "BrowserToolbarPalette") return;
 		var Btn = document.createElement("toolbarbutton");
 		Btn.id = "JsTranslator";
@@ -18,10 +19,10 @@
 		Btn.setAttribute("removable", "true");
 		Btn.style.listStyleImage = "url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAMpSURBVDhPJZPdTxRXGMZHcGZ2ZrVeNOnXRXvZtPGiJk2t1SjsAmLRsgu7y5IQmzQNqSE1ppZlP2Fx2V3YDz4sxWIU64K2UAiiFgtpbQLGmKjhqknTi9rrJv0bfn3P4eLJycyZ3/M+73nPGN7oZZzoFN6uSdyucfZ3i7oqOOGSaBQ3XGRfpIg3nMfuyGEHL2EFs1iBIUx/BsMV2NXwBHa4ivHJKHuCYwKP4QkVqQ8WME5fwmgTSGA7OLwLt6TZ25gSAwVHx7EEfrmnSu/EdQ6dnxKjAp7OPG+cLdI+NE1A5HQOYwYGsVoyGt7r0wYTUr2KE6lKzDGurCzxbGeD97+sUPt5hZmlGi/+fsSff23zSvcge5rSmL409QKbykCBTqSCGynr+MaZHO/1VTjUV+bew2Wqt2r8+nid4xdl35/Cbc5gN6nqSS3DFdgJl6XfUd75osqV1RU+LV/FOJ7iowsV/nnxmOd/bHG0bwzj2ADGYdHROJbApjoDK1TmpWiJ0sI8D7eX+e/fHYZv1OjOfcMvW6tS/T65a3NsPVmXRKtkvv2Otq9K1DcmsfySwCPjUtXfPTfB270lrq4ucm58huL8TXryk2LwgLXNZfpGJyl9f5OZH2sEYmXqGySFNhDYkXEZZ0Y40DXC/L0fiOSmOdhb4PPCZZ7s/MZPD5Y4daFIXYPEPxKTFgbkDiTkEBPKoIgbKlDXnuOI7nmbpzvrzC7eIDk9y/bTTdY2Frl9Z467m7d4KzQkE0hIdZEvLgYyazeUx2gdInt9jo1Hd3kzkiWaHte6//sa/VOzvH46xcGzOfa3qvGpQ4zr1bA78njkipqBYV7tGeG1Tpl1g0Q7IZsffs21lQU+y8nF+uCiHJwCEzLGXQPLJy3p+92hrmgW82RKNpN4T6XwSiXbH6d2Z4H2/oqMsB+3JYFHoqv3pn8Ae9dAfo5AFs/HafadTOIK6LQktUz5MJquSN+D1DUKIJXtJlnlvSUG+gxsgZ22DK5U11JwszJIaBknYvpjT7NAAntElj8m/YuRmBqurqzgtAASXaVQUZWBQN7WuKzyrCqrBALb/n5tYvli/A/bgheQIo8aZgAAAABJRU5ErkJggg==)";
 		Btn.setAttribute("label","JsTranslator");
-		Btn.setAttribute("tooltiptext","JsTranslator");
+		//Btn.setAttribute("tooltiptext","JsTranslator");
 		//navigator.palette.appendChild(Btn);
-		//可选位置status-bar  urlbar-icons addon-bar alltabs-button TabsToolbar go-button
-        document.getElementById("status-bar").appendChild(Btn);
+		//status-bar  urlbar-icons addon-bar alltabs-button TabsToolbar go-button
+        document.getElementById("status-bar").appendChild(Btn);//地址栏
 		
 		Popup = document.createElement("menupopup");
 		//Popup.setAttribute("position", "after_end");//适合放右边
