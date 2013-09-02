@@ -1,25 +1,30 @@
 <?xml version="1.0"?>
 <RDF:RDF xmlns:NC="http://home.netscape.com/NC-rdf#"
          xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <RDF:Description RDF:about="chrome://browser/content/browser.xul#TabsToolbar"
-                   currentset="tabbrowser-tabs,new-tab-button,alltabs-button,downloads-button,home-button,usercssloader_menubtn,tabs-closebutton" />
+  <RDF:Description RDF:about="chrome://browser/content/browser.xul#sidebar-title"
+                   value="" />
   <RDF:Description RDF:about="chrome://browser/content/browser.xul#addon-bar"
                    collapsed="false"
                    currentset="addonbar-closebutton,spring,status-bar,muter-toolbar-palette-button,ntabimprove,tczoompanel,quickluanch-addonbar-item" />
-  <RDF:Description RDF:about="chrome://browser/content/browser.xul#main-window"
-                   width="1024.5"
-                   height="546"
-                   sizemode="maximized" />
-  <RDF:Description RDF:about="chrome://browser/content/browser.xul#PersonalToolbar"
-                   currentset="personal-bookmarks"
-                   collapsed="true" />
+  <RDF:Description RDF:about="chrome://browser/content/browser.xul#toolbar-menubar"
+                   currentset="menubar-items" />
   <RDF:Description RDF:about="chrome://browser/content/browser.xul#sidebar-box"
                    sidebarcommand=""
                    width=""
                    src="" />
+  <RDF:Description RDF:about="chrome://browser/content/browser.xul#TabsToolbar"
+                   currentset="tabbrowser-tabs,new-tab-button,downloads-button,home-button,usercssloader_menubtn,alltabs-button,tabs-closebutton" />
+  <RDF:Description RDF:about="chrome://browser/content/browser.xul#PersonalToolbar"
+                   currentset="personal-bookmarks" />
+  <RDF:Description RDF:about="chrome://global/content/customizeToolbar.xul">
+    <NC:persist RDF:resource="chrome://global/content/customizeToolbar.xul#CustomizeToolbarWindow"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="chrome://global/content/customizeToolbar.xul#CustomizeToolbarWindow"
+                   width="665"
+                   height="470" />
   <RDF:Description RDF:about="chrome://browser/content/browser.xul#nav-bar"
                    collapsed=""
-                   currentset="unified-back-forward-button,urlbar-container,reload-button,stop-button,undoclosetab-button,search-container,webrtc-status-button,window-controls,social-share-button,lpt_lastpass-compact-btn,bookmarks-menu-button,ce_easyscreenshot" />
+                   currentset="unified-back-forward-button,urlbar-container,reload-button,stop-button,undoclosetab-button,search-container,webrtc-status-button,bookmarks-menu-button,window-controls,social-share-button,lpt_lastpass-compact-btn,ce_easyscreenshot" />
   <RDF:Description RDF:about="chrome://browser/content/browser.xul">
     <NC:persist RDF:resource="chrome://browser/content/browser.xul#main-window"/>
     <NC:persist RDF:resource="chrome://browser/content/browser.xul#addon-bar"/>
@@ -30,14 +35,10 @@
     <NC:persist RDF:resource="chrome://browser/content/browser.xul#sidebar-box"/>
     <NC:persist RDF:resource="chrome://browser/content/browser.xul#sidebar-title"/>
   </RDF:Description>
-  <RDF:Description RDF:about="chrome://browser/content/browser.xul#sidebar-title"
-                   value="" />
-  <RDF:Description RDF:about="chrome://global/content/customizeToolbar.xul">
-    <NC:persist RDF:resource="chrome://global/content/customizeToolbar.xul#CustomizeToolbarWindow"/>
-  </RDF:Description>
-  <RDF:Description RDF:about="chrome://browser/content/browser.xul#toolbar-menubar"
-                   currentset="menubar-items" />
-  <RDF:Description RDF:about="chrome://global/content/customizeToolbar.xul#CustomizeToolbarWindow"
-                   width="665"
-                   height="470" />
+  <RDF:Description RDF:about="chrome://browser/content/browser.xul#main-window"
+                   height="546"
+                   screenX="4"
+                   screenY="4"
+                   width="1024"
+                   sizemode="maximized" />
 </RDF:RDF>
