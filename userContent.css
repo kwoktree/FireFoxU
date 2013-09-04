@@ -1,0 +1,122 @@
+/*
+ _____________________________________________________________________
+|                  |                                                  |
+|          Title:  |  Firefox SimpleU Edition CSS File Based          |
+|         Author:  |  -=LeoKwok=-                                     |
+|Css: https://raw.github.com/kwoktree/FireFoxU/master/userContent.css |
+|   Last Updated:  |  20:50 2013/9/4                                  |
+|        Version:  |  1.0.0.3                                         |
+|__________________|__________________________________________________|
+
+*/
+
+/*调整选中文本及其背景的颜色*/
+*::-moz-selection{
+background:#FFC299;  
+color:#02020F;
+ }
+
+/*输入框类chrome高亮*/
+input:not([type='submit']):not([type='reset']):not([type='button']):not([type='checkbox']):not([type='radio']):focus, textarea:focus, select:focus{ border:1px solid #0099FF;  box-shadow: 1px 1px 0 #0099FF, 1px -1px 0 #0099FF, -1px 1px 0 #0099FF, -1px -1px 0 #0099FF, 0px 0px 5px 1px #0099FF !important;  border-radius:5px!important; }
+
+/*当前标签打开该链接显示红色,新标签打开为蓝色*/
+a:hover{
+color: red !important;/*链接颜色自定义*/
+text-shadow:-5px 3px 18px #F90 !important;/*链接阴影*/
+-moz-transition: all 0.2s ease-out;/*链接变色动画显示时长及类型，具体参考相关资料*/
+}
+A[target="_blank"]>img:hover{box-shadow: 0 0 1px 1px blue !important;}
+A[target="_blank"]:hover{color:blue !important;}
+
+/*破解右键复制限制*/
+body{
+-moz-user-select:element !important;
+}
+
+/*图片圆角*/
+img{border-radius: 4px !important;}
+
+/*BBS.Code.Fix*/
+.blockcode ol li{list-style-type:none!important;}
+.blockcode > div[id^="code"] + em {display:none!important;}
+
+/* 去除伪链接的下划线 */
+a:not([href]){text-decoration: none !important;}
+
+/* 去除非链接文字下划线，并给这些文字加粗 */
+u,span[style="text-decoration: underline"]{text-decoration: none !important;font-weight: bold !important;}
+
+/* 将白色字体变为暗蓝灰 */
+[style*="color: white"],[style*="color: #FFFFFF"],[color*="White"],[color*="#FFFFFF"]{color: #483D8B !important;}
+
+/* 阻止<blink>标签带来的闪烁 */
+blink, .blink, *[style*="blink"]{text-decoration : inherit !important;}
+
+/*Show Broken Images*/
+@-moz-document url-prefix(http), url-prefix(https), url-prefix(file) {
+	img{
+		font: 12px Arial!important;
+	}
+	img:-moz-broken{
+		-moz-force-broken-image-icon: 1 !important;
+		width: 48px;
+		height: 24px;
+	}
+}
+
+@-moz-document url("about:addons"), url("chrome://mozapps/content/extensions/extensions.xul") {
+    #category-userchromejs > .category-icon {
+        list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACk0lEQVQ4ja3RW0hTARwG8A+nEIIxI9DwyQtCarKj7vhkWEwj8AKahNR6siAispce6k2y9VJvIblpkBOt4xGU5ko0RKZuecMLedlxTk0ym7Y5TcvL10OmKwuC+uB7/fG/AP8jarWaERERNBgMDxsbG4uMRuMdQRB4WH2MGdog0gvuuL+XbnDLDW66wQNAeXl5mSzLeUajsVQQhHW1+gjFtPgNn6d2Yl6pdM4rlc53U8/G/a4T/q2/A9RMS0tfXfR86ZpwLjgmnAuOMYU27/TZpe0/AQ0NDbkmk+nGPpC25vF47Iqi9CmK0jfh9PV4p7OWDwCRkZEsKysz1NfXF1VUVNzaA7TatSXvcs+Uy9WruFy9k9P+bt9M9vLO3C9AXFwcBUGgKIrMyMhgYmIij4aFMT05+fPk0NDAQGfn8LDNNjzUNdb/seekd90eAKiCwxkVFc2EhOPUaDTUiiLjYmKYAvAMwHyAJQDvAqwE2IwgOqDaB87nH2JRgbhaUFj8tbi4ePWiXv8pLyfHJwDMBli4C5QDNAG0AOxHwATcACcHr483NXeNWSyWPovV2tnUKPekAMwCeCk01HNPp7M8ysxsq9Hp2pp1urYOne71PjAPvum44jLXWTslSbJLsuyoNdf0pQA8BbBUo3FY7fZkyWrNrNutuaUl+zfAyy5Jeu4IBE4DvJaUNNTQ3p77RJb1JlnWV8qy/rEslfwEdLffdFY9dXSY617ZzPWtturqpr0VLoSE+G+npg4+EIRRo1Y7Kmm1o62i+HYP2JoBl8fD19+PxPs+jMSuLI7Grrjt0f6U3SOeA3gZoAFgFcAWgAOBR9x0g9szIGfBnVmQc+DqGPgDKAJ4FeB9gFXBwXyhUrFXFfDGf8k3RzmjBlDWo+YAAAAASUVORK5CYII=);
+    }
+}
+
+@-moz-document domain("acfun.tv"){
+.area{margin: 0px auto !important;}
+}
+@-moz-document domain("www.amazon.cn"){
+body{margin-top: 10px !important;}
+}
+@-moz-document domain("www.hotsk.com"){
+div[align="left"]{margin: 0px auto !important;width: 960px !important;}
+}
+@-moz-document domain("auto.ifeng.com"){
+a {border-bottom: none !important;}
+}
+@-moz-document domain("bbs.operachina.com"){
+article.a101921,article.a81164,article.a99512,article.a588 {display: none !important;}
+}
+@-moz-document domain("pcbeta.com"){
+div[id="wp7_banner"],div[id="sitefocus"],div[style="padding:0 10px 10px;background:#d0dae4;"],div[style$="#d0dae4;"][class="wp"]{display:none !important}
+ul[class="forum_top_sub"],ul[class="forum_top"],div[style*="padding:9px;width:980px;height:437px;"]{display:none !important}
+}
+@-moz-document domain("finance.sina.com.cn"){
+.secondaryHeader {margin: 0px !important;}
+}
+@-moz-document domain("item.taobao.com"){
+.content p font { font-size: 20px !important; }
+}
+@-moz-document domain("www.tianya.cn"){
+.pagewrap {margin-top: 10px !important;}
+}
+@-moz-document domain("www.top81.cn"){
+[class^="thread_"] li {margin-left: 30px !important;}
+[class^="thread_"] li:first-child {margin-left: 0px !important;}
+}
+@-moz-document domain("www.u17.com"){
+div[class="www_hd_middle_ct"],div[class="www_hd_middle_rt"],div[class="pd_b_13"],span[class="icon_clo"]{display:none!important;}
+div.ui-dialog.ui-widget.ui-widget-content.ui-corner-all,
+div.ui-widget-overlay{
+display:none!important;
+}
+}
+@-moz-document domain("yingzheng.com"){
+div[id^="portal_block_"][class="block move-span"],div[class="dxb_bc"],td[class="plc plm"]{display:none !important;}
+}
+@-moz-document domain("soku.com"){
+div[class^="aa_"],div[id^="ab_"],[id*="Ad"],[class^="AB"]{ display: none !important }
+.row_index_1{height:641px!important;}
+}
+@-moz-document domain("youku.com"){
+div[class^="aa_"],div[id^="ab_"],[id*="Ad"],[class^="AB"]{ display: none !important }
+.row_index_1{height:641px!important;}
+}

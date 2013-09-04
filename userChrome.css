@@ -2,14 +2,14 @@
 @-moz-document url(chrome://browser/content/browser.xul) {
 
 /*
-____________________________________________________________________________
-|                  |                                                        |
-|          Title:  |  Firefox SimpleU Edition CSS File Based                |
-|         Author:  |  -=LeoKwok=-                                           |
-|Css Chkout: http://simpleu.googlecode.com/svn/trunk/Firefox/userChrome.css |
-|   Last Updated:  |  9:45 2013/9/2                                         |
-|        Version:  |  1.8.0.8                                               |
-|__________________|________________________________________________________|
+ _____________________________________________________________________
+|                  |                                                  |
+|          Title:  |  Firefox SimpleU Edition CSS File Based          |
+|         Author:  |  -=LeoKwok=-                                     |
+|Css: https://raw.github.com/kwoktree/FireFoxU/master/userChrome.css  |
+|   Last Updated:  |  20:51 2013/9/4                                  |
+|        Version:  |  1.8.0.11                                        |
+|__________________|__________________________________________________|
 
 */
 
@@ -24,14 +24,6 @@ ____________________________________________________________________________
 .abp-contextmenuitem{
 display: none !important;
 	}
-
-/*破解右键复制限制*/
-body{
--moz-user-select:element !important;
-}
-
-/*图片圆角*/
-img{border-radius: 4px !important;}
 
 /*附加组件栏调整*/	
 #addonbar-closebutton,#addon-bar dropmarker {
@@ -76,8 +68,9 @@ left:16px!important;
 }
 
 /*标签样式css*/
-.tabbrowser-tab[selected] {color: blue !important;}/* 当前标签 */
-.tabbrowser-tab[fadein]:not([selected]):not([unread]):not([busy]):not([pending]){text-decoration:line-through !important;}/* 已读标签 */
+.tabbrowser-tab[selected="true"]{
+     background:#62B76E !important;
+ }/* 选中标签为青草色 */
 .tabbrowser-tab[busy] {color: #009DFF !important;}/* 正在加载标签 */
 .tabbrowser-tab[pending] {color: gray !important;}/* 未加载标签 */
 .tabbrowser-tab[unread] {color: red !important;}/* 未读标签 */
@@ -160,58 +153,14 @@ menuitem[anonid="paste-and-go"] {
 -moz-box-ordinal-group:2 !important;
 }
 
-/*Show Broken Images*/
-@-moz-document url-prefix(http), url-prefix(https), url-prefix(file) {
-	img{
-		font: 12px Arial!important;
-	}
-	img:-moz-broken{
-		-moz-force-broken-image-icon: 1 !important;
-		width: 48px;
-		height: 24px;
-	}
-}
-
-/*输入框类chrome高亮*/
-input:not([type='submit']):not([type='reset']):not([type='button']):not([type='checkbox']):not([type='radio']):focus, textarea:focus, select:focus{ border:1px solid #0099FF;  box-shadow: 1px 1px 0 #0099FF, 1px -1px 0 #0099FF, -1px 1px 0 #0099FF, -1px -1px 0 #0099FF, 0px 0px 5px 1px #0099FF !important;  border-radius:5px!important; }
-
-/*当前标签打开该链接显示红色,新标签打开为蓝色*/
-a:hover{
-color: red !important;/*链接颜色自定义*/
-text-shadow:-5px 3px 18px #F90 !important;/*链接阴影*/
--moz-transition: all 0.2s ease-out;/*链接变色动画显示时长及类型，具体参考相关资料*/
-}
-A[target="_blank"]>img:hover{box-shadow: 0 0 1px 1px blue !important;}
-A[target="_blank"]:hover{color:blue !important;}
-
-/*调整选中文本及其背景的颜色*/
-*::-moz-selection {background-color:#FFC299;color:#02020F;text-shadow:none!important}  
-
-/*BBS.Code.Fix*/
-.blockcode ol li{list-style-type:none!important;}
-.blockcode > div[id^="code"] + em {display:none!important;}
-
-/* 去除伪链接的下划线 */
-a:not([href]){text-decoration: none !important;}
-
-/* 去除非链接文字下划线，并给这些文字加粗 */
-u,span[style="text-decoration: underline"]{text-decoration: none !important;font-weight: bold !important;}
-
-/* 将白色字体变为暗蓝灰 */
-[style*="color: white"],[style*="color: #FFFFFF"],[color*="White"],[color*="#FFFFFF"]{color: #483D8B !important;}
-
-/* 阻止<blink>标签带来的闪烁 */
-blink, .blink, *[style*="blink"]{text-decoration : inherit !important;}
-
 /*---隐藏页面右键菜单---*/ 
 #context-forward, /*前进*/
-#context-bookmarkpage,
+#context-back, /*后退*/
+#context-delete, /*停止*/
 #context-savepage,
 #context-viewsource,
 #context-viewinfo,
 #context-viewbgimage,
-#context-back, /*后退*/
-#context-delete, /*停止*/
 #context-openlink, /*在新窗口打开链接*/
 #context-selectall,/*全选*/
 #spell-check-enabled, /*拼写检查*/
@@ -219,3 +168,4 @@ blink, .blink, *[style*="blink"]{text-decoration : inherit !important;}
 #context-sep-viewbgimage,    /*分割线*/
 #context-sep-viewsource /*分割线*/
 {display: none !important;}
+
