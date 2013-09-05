@@ -1,3 +1,4 @@
+@namespace url(http://www.w3.org/1999/xhtml);
 /*
  _____________________________________________________________________
 |                  |                                                  |
@@ -10,16 +11,16 @@
 
 */
 
-/*调整选中文本及其背景的颜色*/
+/* 调整选中文本及其背景的颜色 */
 *::-moz-selection{
 background:#FFC299;  
 color:#02020F;
  }
 
-/*输入框类chrome高亮*/
+/* 输入框类chrome高亮 */
 input:not([type='submit']):not([type='reset']):not([type='button']):not([type='checkbox']):not([type='radio']):focus, textarea:focus, select:focus{ border:1px solid #0099FF;  box-shadow: 1px 1px 0 #0099FF, 1px -1px 0 #0099FF, -1px 1px 0 #0099FF, -1px -1px 0 #0099FF, 0px 0px 5px 1px #0099FF !important;  border-radius:5px!important; }
 
-/*当前标签打开该链接显示红色,新标签打开为蓝色*/
+/* 当前标签打开该链接显示红色,新标签打开为蓝色 */
 a:hover{
 color: red !important;/*链接颜色自定义*/
 text-shadow:-5px 3px 18px #F90 !important;/*链接阴影*/
@@ -28,15 +29,13 @@ text-shadow:-5px 3px 18px #F90 !important;/*链接阴影*/
 A[target="_blank"]>img:hover{box-shadow: 0 0 1px 1px blue !important;}
 A[target="_blank"]:hover{color:blue !important;}
 
-/*破解右键复制限制*/
-body{
--moz-user-select:element !important;
-}
+/* 破解右键复制限制 */
+body{ -moz-user-select:element !important;}
 
-/*图片圆角*/
+/* 图片圆角*/
 img{border-radius: 4px !important;}
 
-/*BBS.Code.Fix*/
+/* BBS.Code.Fix */
 .blockcode ol li{list-style-type:none!important;}
 .blockcode > div[id^="code"] + em {display:none!important;}
 
@@ -52,7 +51,7 @@ u,span[style="text-decoration: underline"]{text-decoration: none !important;font
 /* 阻止<blink>标签带来的闪烁 */
 blink, .blink, *[style*="blink"]{text-decoration : inherit !important;}
 
-/*Show Broken Images*/
+/* Show Broken Images */
 @-moz-document url-prefix(http), url-prefix(https), url-prefix(file) {
 	img{
 		font: 12px Arial!important;
@@ -64,12 +63,22 @@ blink, .blink, *[style*="blink"]{text-decoration : inherit !important;}
 	}
 }
 
+/* 图标添加 */
 @-moz-document url("about:addons"), url("chrome://mozapps/content/extensions/extensions.xul") {
     #category-userchromejs > .category-icon {
         list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACk0lEQVQ4ja3RW0hTARwG8A+nEIIxI9DwyQtCarKj7vhkWEwj8AKahNR6siAispce6k2y9VJvIblpkBOt4xGU5ko0RKZuecMLedlxTk0ym7Y5TcvL10OmKwuC+uB7/fG/AP8jarWaERERNBgMDxsbG4uMRuMdQRB4WH2MGdog0gvuuL+XbnDLDW66wQNAeXl5mSzLeUajsVQQhHW1+gjFtPgNn6d2Yl6pdM4rlc53U8/G/a4T/q2/A9RMS0tfXfR86ZpwLjgmnAuOMYU27/TZpe0/AQ0NDbkmk+nGPpC25vF47Iqi9CmK0jfh9PV4p7OWDwCRkZEsKysz1NfXF1VUVNzaA7TatSXvcs+Uy9WruFy9k9P+bt9M9vLO3C9AXFwcBUGgKIrMyMhgYmIij4aFMT05+fPk0NDAQGfn8LDNNjzUNdb/seekd90eAKiCwxkVFc2EhOPUaDTUiiLjYmKYAvAMwHyAJQDvAqwE2IwgOqDaB87nH2JRgbhaUFj8tbi4ePWiXv8pLyfHJwDMBli4C5QDNAG0AOxHwATcACcHr483NXeNWSyWPovV2tnUKPekAMwCeCk01HNPp7M8ysxsq9Hp2pp1urYOne71PjAPvum44jLXWTslSbJLsuyoNdf0pQA8BbBUo3FY7fZkyWrNrNutuaUl+zfAyy5Jeu4IBE4DvJaUNNTQ3p77RJb1JlnWV8qy/rEslfwEdLffdFY9dXSY617ZzPWtturqpr0VLoSE+G+npg4+EIRRo1Y7Kmm1o62i+HYP2JoBl8fD19+PxPs+jMSuLI7Grrjt0f6U3SOeA3gZoAFgFcAWgAOBR9x0g9szIGfBnVmQc+DqGPgDKAJ4FeB9gFXBwXyhUrFXFfDGf8k3RzmjBlDWo+YAAAAASUVORK5CYII=);
     }
 }
 
+/* about:blank */
+@-moz-document url("about:blank") {
+     * { background-color: #EDEDED;}
+}
+
+/* 网页修复破解美化 */
+@-moz-document regexp("((?!github).)*"){
+   *{font-family:"Segoe UI Semiblod","Microsoft YaHei UI" !important;}
+}
 @-moz-document domain("acfun.tv"){
 .area{margin: 0px auto !important;}
 }
@@ -119,4 +128,82 @@ div[class^="aa_"],div[id^="ab_"],[id*="Ad"],[class^="AB"]{ display: none !import
 @-moz-document domain("youku.com"){
 div[class^="aa_"],div[id^="ab_"],[id*="Ad"],[class^="AB"]{ display: none !important }
 .row_index_1{height:641px!important;}
+}
+
+/* NewTab美化 */
+@-moz-document url("about:newtab") {
+	.newtab-control {display: none !important;}
+    /*前一个child(1)代表行数，后一个代表列数，要增加重复下面样式即可*/
+    #newtab-grid > div:nth-child(1) > div:nth-child(1) > div > a > span:first-child {
+        background-image: url("./Thumbnails/tianya.png") !important;
+        background-position: center !important;
+        background-size:100% 100% !important;}
+    #newtab-grid > div:nth-child(1) > div:nth-child(2) > div > a > span:first-child {
+        background-image: url("./Thumbnails/weibo.png") !important;
+        background-position: center !important;
+        background-size:100% 100% !important;}
+    #newtab-grid > div:nth-child(1) > div:nth-child(3) > div > a > span:first-child {
+        background-image: url("./Thumbnails/renren.png") !important;
+        background-position: center !important;
+        background-size:100% 100% !important;}
+    #newtab-grid > div:nth-child(1) > div:nth-child(4) > div > a > span:first-child {
+        background-image: url("./Thumbnails/douban.png") !important;
+        background-position: center !important;
+        background-size:100% 100% !important;} 
+    #newtab-grid > div:nth-child(1) > div:nth-child(5) > div > a > span:first-child {
+        background-image: url("./Thumbnails/mop.png") !important;
+        background-position: center !important;
+        background-size:100% 100% !important;}
+    #newtab-grid > div:nth-child(2) > div:nth-child(1) > div > a > span:first-child {
+        background-image: url("./Thumbnails/360v.png") !important;
+        background-position: center !important;
+        background-size:100% 100% !important;}
+    #newtab-grid > div:nth-child(2) > div:nth-child(2) > div > a > span:first-child {
+        background-image: url("./Thumbnails/youku.png") !important;
+        background-position: center !important;
+        background-size:100% 100% !important;}
+    #newtab-grid > div:nth-child(2) > div:nth-child(3) > div > a > span:first-child {
+        background-image: url("./Thumbnails/bbgyy.png") !important;
+        background-position: center !important;
+        background-size:100% 100% !important;} 
+    #newtab-grid > div:nth-child(2) > div:nth-child(4) > div > a > span:first-child {
+        background-image: url("./Thumbnails/yyets.png") !important;
+        background-position: center !important;
+        background-size:100% 100% !important;}
+    #newtab-grid > div:nth-child(2) > div:nth-child(5) > div > a > span:first-child {
+        background-image: url("./Thumbnails/kankan.png") !important;
+        background-position: center !important;
+        background-size:100% 100% !important;}
+    #newtab-grid > div:nth-child(3) > div:nth-child(1) > div > a > span:first-child {
+        background-image: url("./Thumbnails/163.png") !important;
+        background-position: center !important;
+        background-size:100% 100% !important;}
+    #newtab-grid > div:nth-child(3) > div:nth-child(2) > div > a > span:first-child {
+        background-image: url("./Thumbnails/cnbeta.png") !important;
+        background-position: center !important;
+        background-size:100% 100% !important;}        
+    #newtab-grid > div:nth-child(3) > div:nth-child(3) > div > a > span:first-child {
+        background-image: url("./Thumbnails/fengniao.png") !important;
+        background-position: center !important;
+        background-size:100% 100% !important;}
+    #newtab-grid > div:nth-child(3) > div:nth-child(4) > div > a > span:first-child {
+        background-image: url("./Thumbnails/taobao.png") !important;
+        background-position: center !important;
+        background-size:100% 100% !important;}
+    #newtab-grid > div:nth-child(3) > div:nth-child(5) > div > a > span:first-child {
+        background-image: url("./Thumbnails/kafan.png") !important;
+        background-position: center !important;
+        background-size:100% 100% !important;}
+    #newtab-grid > div:nth-child(4) > div:nth-child(1) > div > a > span:first-child {
+        background-image: url("./Thumbnails/tieba.png") !important;
+        background-position: center !important;
+        background-size:100% 100% !important;}
+    #newtab-grid > div:nth-child(4) > div:nth-child(2) > div > a > span:first-child {
+        background-image: url("./Thumbnails/autohome.png") !important;
+        background-position: center !important;
+        background-size:100% 100% !important;}
+    #newtab-grid > div:nth-child(4) > div:nth-child(3) > div > a > span:first-child {
+        background-image: url("./Thumbnails/wiki.png") !important;
+        background-position: center !important;
+        background-size:100% 100% !important;}
 }
