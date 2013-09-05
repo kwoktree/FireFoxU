@@ -8,10 +8,9 @@ FirefoxU是一个简洁的定制版，不需要你花更多的时间去设置，尽情享受你的网上冲浪。
 3.进入core目录，ctrl+A全选，并解压到 "D:\Program Files\FirefoxU" 目录，
 若无此目录请手动创建。
 4.将 FirefoxU.7z 解压到此目录
-5.运行FirefoxU.bat，启动
-6.若想创建快捷方式，请双击@ShortCut.bat
-此步骤会 设置此目录下profile为配置目录，设置完以后可不带参数运行。
-并在桌面创建一个FirefoxU的快捷方式
+5.运行BrowserU.bat，启动
+6.若想创建快捷方式，请双击@DeskFirefox.vbs
+此步骤会在桌面创建一个FirefoxU的带参数的快捷方式
 
 FF默认的配置保存目录：
 %AppData%\Mozilla
